@@ -144,4 +144,4 @@ def iou(logits, labels):
 
 
 
-    return tf.maximum(inter_area / union, 0)
+    return inter_area / union
