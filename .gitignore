@@ -1,0 +1,5 @@
+__pycache__
+.ipynb_checkpoints
+/data/fer2013.tar.gz
+/data/fer2013/fer2013.csv
+*.npz
