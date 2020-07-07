@@ -8,7 +8,7 @@ args = parser.parse_args()
 import pandas as pd
 import numpy as np
 from constant import *
-from keras.utils import to_categorical, Progbar
+from tensorflow.keras.utils import to_categorical, Progbar
 print("Package Loaded!")
 
 df = pd.read_csv(args.csv_input)

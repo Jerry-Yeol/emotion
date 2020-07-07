@@ -6,7 +6,8 @@ DATA_DIR = './data/fer2013/data.npz'
 CHECKPOINTS_DIR = './checkpoints/model_2.h5'
 
 TRAIN_IMAGE_SIZE = 48
-BATCH_SIZE = 16
+BATCH_SIZE = 32
+EPOCHS = 50
 
 NUM2EMO_DICT = {
     0:"Angry", 1:"Disgust", 
