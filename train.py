@@ -7,6 +7,17 @@ from network import *
 from constant import *
 print("Package Loaded!")
 
+# For Efficiency
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    try:
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+        logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+        print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+    except RuntimeError as e:
+        print(e)
+
 tmp = np.load(DATA_DIR)
 tmp.allow_pickle = True
 tr_img, val_img, te_img = tmp['imgs']
@@ -32,7 +43,7 @@ emonet.compile(optimizer=optimizers.Adam(), loss='categorical_crossentropy', met
 
 print("Start Training!")
 emonet.fit(
-    x=tr_img, y=tr_lab, batch_size=BATCH_SIZE, \
+    x=tr_img, y=tr_lab, batch_size=BATCH_SIZE, epochs=EPOCHS,\
     validation_data=(val_img, val_lab), \
     callbacks=[checkpoints, earlystop, lronplateau, csvlogger]
     )
