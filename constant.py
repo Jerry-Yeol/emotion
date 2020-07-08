@@ -1,9 +1,10 @@
-HAAR_EYE_DIR = './haar/haarcascade_eye.xml'
-HAAR_FACE_DIR = './haar/haarcascade_frontalface_default.xml'
+HAAR_EYE_PATH = './haar/haarcascade_eye.xml'
+HAAR_FACE_PATH = './haar/haarcascade_frontalface_default.xml'
 
-DATA_DIR = './data/fer2013/data.npz'
+DATA_PATH = './data/fer2013/data.npz'
 
-CHECKPOINTS_DIR = './checkpoints/model_2.h5'
+MODEL_PATH = './checkpoints/model.json'
+CHECKPOINTS_PATH = './checkpoints/best.h5'
 
 TRAIN_IMAGE_SIZE = 48
 BATCH_SIZE = 32
