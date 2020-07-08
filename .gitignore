@@ -4,7 +4,7 @@ __pycache__
 .vscode
 /data/ck/*
 /data/jaffe/*
-*.h5
+ep*.h5
 *.csv
 *.npz
 nohup.out
