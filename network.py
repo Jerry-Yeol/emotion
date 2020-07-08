@@ -26,14 +26,8 @@ def EmoNet():
     x = layers.Conv2D(256, 3, padding='same')(x)
     x = layers.BatchNormalization()(x)
     x = layers.ReLU()(x)
-    x = layers.Conv2D(256, 3, padding='same')(x)
-    x = layers.BatchNormalization()(x)
-    x = layers.ReLU()(x)
 
     x = layers.MaxPooling2D(2)(x) # 6 x 6
-    x = layers.Conv2D(512, 3, padding='same')(x)
-    x = layers.BatchNormalization()(x)
-    x = layers.ReLU()(x)
     x = layers.Conv2D(512, 3, padding='same')(x)
     x = layers.BatchNormalization()(x)
     x = layers.ReLU()(x)

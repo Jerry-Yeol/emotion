@@ -18,7 +18,7 @@ if gpus:
     except RuntimeError as e:
         print(e)
 
-tmp = np.load(DATA_DIR)
+tmp = np.load(DATA_PATH)
 tmp.allow_pickle = True
 tr_img, val_img, te_img = tmp['imgs']
 tr_img, val_img, te_img = tr_img/255., val_img/255., te_img/255.
@@ -27,7 +27,7 @@ tr_lab, val_lab, te_lab = tmp['labs']
 print("Data Loaded!")
 
 
-checkpoints = callbacks.ModelCheckpoint('./checkpoints/ep{epoch:03d}-loss{loss:.3f}-val_loss{val_loss:.3f}.h5',
+checkpoints = callbacks.ModelCheckpoint('./checkpoints/ep{epoch:03d}-loss{loss:.3f}-val_loss{val_loss:.3f}-acc{acc:.3f}-val_acc{val_acc:.3f}.h5',
         monitor='val_loss',save_best_only=True, save_weights_only=True)
 earlystop = callbacks.EarlyStopping(patience=10, verbose=1)
 lronplateau = callbacks.ReduceLROnPlateau(patienct=5, verbose=1)
